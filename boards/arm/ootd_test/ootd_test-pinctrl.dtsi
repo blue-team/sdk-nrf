@@ -1,0 +1,75 @@
+/*
+ * Copyright (c) 2022 Nordic Semiconductor
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+ &pinctrl {
+
+	pwm0_default: pwm0_default {
+		group1 {
+			psels = <NRF_PSEL(PWM_OUT0, 1, 04)>,		// LED Red GPIO35
+					<NRF_PSEL(PWM_OUT1, 0, 25)>,		// LED Green GPIO38
+					<NRF_PSEL(PWM_OUT2, 0, 31)>,		// LED Blue GPIO20
+					<NRF_PSEL(PWM_OUT3, 1, 7)>;			// LED White GPIO39
+		};
+	};
+
+	pwm0_sleep: pwm0_sleep {
+		group1 {
+			psels = <NRF_PSEL(PWM_OUT0, 1, 04)>,		// LED Red GPIO35
+					<NRF_PSEL(PWM_OUT1, 0, 25)>,		// LED Green GPIO38
+					<NRF_PSEL(PWM_OUT2, 0, 31)>,		// LED Blue GPIO20
+					<NRF_PSEL(PWM_OUT3, 1, 7)>;			// LED White GPIO39
+			low-power-enable;
+		};
+	};
+
+	pwm1_default: pwm1_default {
+		group1 {
+			psels = <NRF_PSEL(PWM_OUT0, 0, 29)>,	// LED Backlight Red GPIO23
+				<NRF_PSEL(PWM_OUT1, 0, 30)>,		// LED Backlight Green GPIO24
+				<NRF_PSEL(PWM_OUT2, 0, 4)>;			// LED Backlight Blue GPIO25
+		};
+	};
+
+	pwm1_sleep: pwm1_sleep {
+		group1 {
+			psels = <NRF_PSEL(PWM_OUT0, 0, 29)>,	// LED Backlight Red GPIO23
+				<NRF_PSEL(PWM_OUT1, 0, 30)>,		// LED Backlight Green GPIO24
+				<NRF_PSEL(PWM_OUT2, 0, 4)>;			// LED Backlight Blue GPIO25
+			low-power-enable;
+		};
+	};
+
+	i2c0_default: i2c0_default {
+		group1 {
+			psels = <NRF_PSEL(TWIM_SDA, 0, 13)>,	// I2C GPIO1
+					<NRF_PSEL(TWIM_SCL, 0, 0)>;		// I2C GPIO2
+		};
+	};
+
+	i2c0_sleep: i2c0_sleep {
+		group1 {
+			psels = <NRF_PSEL(TWIM_SDA, 0, 13)>,	// I2C GPIO1
+					<NRF_PSEL(TWIM_SCL, 0, 0)>;		// I2C GPIO2
+			low-power-enable;
+		};
+	};
+
+	spi1_default: spi1_default {
+		group1 {
+			psels = <NRF_PSEL(SPIM_SCK, 1, 2)>,		// SPI CLK GPIO36
+					<NRF_PSEL(SPIM_MOSI, 1, 0)>,	// SPI MOSI GPIO8
+					<NRF_PSEL(SPIM_MISO, 0, 27)>;	// dummy GPIO44
+		};
+	};
+
+	spi1_sleep: spi1_sleep {
+		group1 {
+			psels = <NRF_PSEL(SPIM_SCK, 1, 2)>,		// SPI CLK GPIO36
+					<NRF_PSEL(SPIM_MOSI, 1, 0)>,	// SPI MOSI GPIO8
+					<NRF_PSEL(SPIM_MISO, 0, 27)>;	// dummy GPIO44
+			low-power-enable;
+		};
+	};
+};

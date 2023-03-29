@@ -1,0 +1,21 @@
+# Copyright (c) 2023 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+identifier: ootd_test
+name: ootd_test
+type: mcu
+arch: arm
+ram: 128
+flash: 512
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+supported:
+  - ble
+  - counter
+  - gpio
+  - i2c
+  - spi
+  - watchdog
+  - netif:openthread

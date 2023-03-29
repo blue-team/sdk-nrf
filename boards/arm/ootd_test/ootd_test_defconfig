@@ -1,0 +1,19 @@
+# Copyright (c) 2023 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+CONFIG_SOC_SERIES_NRF52X=y
+CONFIG_SOC_NRF52833_QIAA=y
+CONFIG_BOARD_OOTD_TEST=y
+
+# Clock Control. No external xtal
+CONFIG_CLOCK_CONTROL=y
+CONFIG_CLOCK_CONTROL_NRF_K32SRC_RC=y
+CONFIG_CLOCK_CONTROL_NRF_K32SRC_XTAL=n
+
+# Enable MPU
+CONFIG_ARM_MPU=y
+
+# Enable hardware stack protection
+CONFIG_HW_STACK_PROTECTION=y
+
+CONFIG_PINCTRL=y
