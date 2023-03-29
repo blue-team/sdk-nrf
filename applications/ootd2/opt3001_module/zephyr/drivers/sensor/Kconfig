@@ -1,0 +1,16 @@
+#
+# Copyright (c) 2019 Nordic Semiconductor
+#
+# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+#
+
+menuconfig SENSOR
+	bool "Sensor Drivers"
+	help
+		Include sensor drivers in config
+
+if SENSOR
+
+rsource "opt3001/Kconfig"
+
+endif # SENSOR
